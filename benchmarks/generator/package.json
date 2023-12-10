@@ -1,0 +1,16 @@
+{
+    "name": "generator_benchmark",
+    "version": "1.0.0",
+    "license": "ISC",
+    "dependencies": {
+      "async-lock": "1.3.2",
+      "deck": "0.0.4",
+      "fabric-contract-api": "2.2.1",
+      "fabric-shim": "2.2.1",
+      "random-picker": "1.0.0",
+      "read-nth-line": "1.0.3",
+      "read-yaml": "1.1.0",
+      "unirand": "2.4.5",
+      "zipfian-integer": "1.0.1"
+    }
+  }

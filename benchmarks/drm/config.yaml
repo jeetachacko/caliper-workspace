@@ -1,0 +1,24 @@
+test:
+  workers:
+    type: local
+    number: 10
+
+  rounds:
+    - label: initLedger
+      txNumber: 1
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1
+      workload:
+        module: benchmarks/drm/initLedger.js
+
+    - label: common
+      txNumber: 10000
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 10
+      workload:
+        module: benchmarks/drm/common.js
+

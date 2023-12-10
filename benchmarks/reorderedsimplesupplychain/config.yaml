@@ -1,0 +1,22 @@
+test:
+  workers:
+    type: local
+    number: 10
+  rounds:
+    - label: InitLedger
+      txNumber: 1
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 1
+      workload:
+        module: benchmarks/reorderedsupplychain/InitLedger.js
+
+    - label: common
+      txNumber: 10000
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 300
+      workload:
+        module: benchmarks/reorderedsupplychain/common.js

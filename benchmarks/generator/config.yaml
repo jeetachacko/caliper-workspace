@@ -1,0 +1,25 @@
+test:
+  workers:
+    type: local
+    number: 10
+
+  rounds:
+    - label: initLedger
+      txNumber: 1000
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+      workload:
+        module: benchmarks/generator/initLedger.js
+
+    - label: common
+      txNumber: 5000
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 25
+      workload:
+        module: benchmarks/generator/common.js
+
+
